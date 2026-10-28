@@ -254,6 +254,19 @@ export function Order() {
             <p className="mt-4 text-center text-xs leading-relaxed text-cocoa/55">
               Sending opens WhatsApp with your order pre-filled. Nothing is charged until the crew confirms.
             </p>
+
+            {sent && (
+              <button
+                type="button"
+                onClick={() => {
+                  clear()
+                  setSent(false)
+                }}
+                className="press mt-3 w-full font-display text-sm font-semibold text-brand-dark hover:underline"
+              >
+                Start a new order
+              </button>
+            )}
           </Glass>
         </section>
       </Container>

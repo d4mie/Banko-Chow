@@ -92,12 +92,12 @@ export function Menu() {
       {/* Floating order summary */}
       {count > 0 && (
         <div
-          className="pointer-events-none fixed inset-x-0 z-30 flex justify-center px-4"
+          className="pointer-events-none fixed inset-x-0 z-30 flex justify-center px-4 md:[--tabbar-h:0rem]"
           style={{ bottom: 'calc(var(--tabbar-h) + var(--sab) + 1.25rem)' }}
         >
           <Link
             to="/order"
-            className="pointer-events-auto press animate-pop glass-strong flex w-full max-w-md items-center justify-between gap-4 rounded-full py-2.5 pl-3 pr-2.5 shadow-float md:[--tabbar-h:0rem]"
+            className="pointer-events-auto press animate-pop glass-dark flex w-full max-w-md items-center justify-between gap-4 rounded-full py-2.5 pl-3 pr-2.5 shadow-float"
           >
             <span className="flex items-center gap-3">
               <span className="grid size-10 place-items-center rounded-full bg-cream text-brand-dark">

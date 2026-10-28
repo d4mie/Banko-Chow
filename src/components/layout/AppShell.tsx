@@ -1,5 +1,5 @@
 import { BookOpenText, Home, MapPin, ShoppingBag, UtensilsCrossed } from 'lucide-react'
-import { useEffect, useLayoutEffect, useRef } from 'react'
+import { useEffect, useLayoutEffect } from 'react'
 import { NavLink, Outlet, useLocation, useNavigate } from 'react-router'
 import pattern from '../../assets/brand/pattern.webp'
 import { cx } from '../../lib/format'
@@ -20,14 +20,12 @@ export function AppShell() {
   const location = useLocation()
   const navigate = useNavigate()
   const { count } = useCart()
-  const historyDepth = useRef(0)
 
   useLayoutEffect(() => {
     if (!location.hash) window.scrollTo({ top: 0, behavior: 'instant' })
   }, [location.pathname, location.hash])
 
   useEffect(() => {
-    historyDepth.current = window.history.length
     return registerBackButton(
       () => location.pathname !== '/',
       () => navigate(-1),
