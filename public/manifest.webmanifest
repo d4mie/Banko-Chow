@@ -1,0 +1,15 @@
+{
+  "name": "Banko Chow",
+  "short_name": "Banko Chow",
+  "description": "Lagos street food with a classy twist. Street Burgers on Agege bread and zobo with zero added sugar.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F06800",
+  "theme_color": "#F06800",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
