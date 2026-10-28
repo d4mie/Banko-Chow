@@ -10,7 +10,7 @@
     "lint": "oxlint",
     "preview": "vite preview",
     "cap:sync": "npm run build && cap sync",
-    "cap:assets": "capacitor-assets generate --iconBackgroundColor '#F26A1B' --iconBackgroundColorDark '#F26A1B' --splashBackgroundColor '#F26A1B' --splashBackgroundColorDark '#F26A1B'",
+    "cap:assets": "capacitor-assets generate --ios --android --iconBackgroundColor '#F06800' --iconBackgroundColorDark '#F06800' --splashBackgroundColor '#F06800' --splashBackgroundColorDark '#F06800'",
     "ios": "npm run cap:sync && cap open ios",
     "android": "npm run cap:sync && cap open android",
     "android:apk": "npm run cap:sync && cd android && ./gradlew assembleDebug"
@@ -18,6 +18,7 @@
   "dependencies": {
     "@capacitor/android": "^8.5.3",
     "@capacitor/app": "^8.1.2",
+    "@capacitor/app-launcher": "^8.0.1",
     "@capacitor/core": "^8.5.3",
     "@capacitor/haptics": "^8.0.2",
     "@capacitor/ios": "^8.5.3",

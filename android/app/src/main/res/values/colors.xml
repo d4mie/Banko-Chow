@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#F06800</color>
+    <color name="colorPrimaryDark">#C24F00</color>
+    <color name="colorAccent">#FF7F00</color>
+    <color name="brandOrange">#F06800</color>
+</resources>

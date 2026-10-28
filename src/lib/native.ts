@@ -1,4 +1,5 @@
 import { App } from '@capacitor/app'
+import { AppLauncher } from '@capacitor/app-launcher'
 import { Capacitor } from '@capacitor/core'
 import { Haptics, ImpactStyle, NotificationType } from '@capacitor/haptics'
 import { SplashScreen } from '@capacitor/splash-screen'
@@ -52,7 +53,7 @@ export function successHaptic(): void {
 /** Opens a URL outside the app (WhatsApp, Instagram, Maps, phone dialer). */
 export function openExternal(url: string): void {
   if (isNative) {
-    window.open(url, '_system')
+    void AppLauncher.openUrl({ url }).catch(() => window.open(url, '_system'))
     return
   }
   window.open(url, '_blank', 'noopener,noreferrer')
