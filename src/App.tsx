@@ -6,6 +6,7 @@ import { Home } from './pages/Home'
 import { Menu } from './pages/Menu'
 import { NotFound } from './pages/NotFound'
 import { Order } from './pages/Order'
+import { Privacy } from './pages/Privacy'
 import { Story } from './pages/Story'
 import { CartProvider } from './store/CartProvider'
 
@@ -21,6 +22,7 @@ export function App() {
             <Route path="story" element={<Story />} />
             <Route path="gallery" element={<Gallery />} />
             <Route path="find-us" element={<FindUs />} />
+            <Route path="privacy" element={<Privacy />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

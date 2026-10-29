@@ -78,7 +78,10 @@ export function Footer() {
 
         <div className="mt-5 flex flex-col items-center justify-between gap-2 px-2 text-xs text-cream/70 sm:flex-row">
           <p>
-            © {year} {site.name}. {site.registrationNumber}.
+            © {year} {site.name}. {site.registrationNumber}.{' '}
+            <Link to="/privacy" className="underline hover:text-cream">
+              Privacy
+            </Link>
           </p>
           <p className="font-display font-semibold tracking-wide">Street ti take over!</p>
         </div>

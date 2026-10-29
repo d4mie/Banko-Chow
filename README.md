@@ -94,8 +94,10 @@ npm run android             # builds the web bundle, syncs it into android/, ope
 npm run android:apk         # debug APK → android/app/build/outputs/apk/debug/app-debug.apk
 ```
 
-Release build: create a keystore, configure `signingConfigs` in `android/app/build.gradle`, then
-`cd android && ./gradlew bundleRelease` for a Play Store `.aab`.
+Release build: `android/keystore.properties` and `android/upload-keystore.jks` are gitignored.
+With those present, `cd android && ./gradlew bundleRelease` writes a Play Store bundle to
+`android/app/build/outputs/bundle/release/app-release.aab`. Keep the keystore and its password
+offline. Play Console will not accept a later upload signed with a different key.
 
 ## App icons & splash screens
 
