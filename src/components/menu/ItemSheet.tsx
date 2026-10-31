@@ -1,6 +1,6 @@
 import { Check, ShoppingBag } from 'lucide-react'
 import { useState } from 'react'
-import { extras, type MenuItem } from '../../data/menu'
+import { extras, menuById, type MenuItem } from '../../data/menu'
 import { cx, formatNaira } from '../../lib/format'
 import { useCart } from '../../store/cart'
 import { Badge, QuantityStepper } from '../ui/Primitives'
@@ -74,9 +74,10 @@ function ItemSheetContent({ item, onClose, onAdded }: ItemSheetProps & { item: M
         {item.allowExtras && (
           <fieldset className="mt-6">
             <legend className="font-display text-xs font-semibold uppercase tracking-[0.2em] text-cocoa/60">Make it do more</legend>
-            <div className="mt-3 grid grid-cols-2 gap-2">
+            <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2">
               {extras.map((extra) => {
                 const on = picked.includes(extra.id)
+                const photo = menuById[extra.id]?.image
                 return (
                   <button
                     key={extra.id}
@@ -84,17 +85,20 @@ function ItemSheetContent({ item, onClose, onAdded }: ItemSheetProps & { item: M
                     onClick={() => toggle(extra.id)}
                     aria-pressed={on}
                     className={cx(
-                      'press flex items-center justify-between rounded-2xl border px-4 py-3 text-left transition-colors',
+                      'press flex items-center justify-between gap-3 rounded-2xl border py-2 pl-2 pr-3 text-left transition-colors',
                       on ? 'border-brand bg-brand text-cream shadow-float' : 'border-cocoa/10 bg-white/60 text-cocoa hover:bg-white',
                     )}
                   >
-                    <span>
-                      <span className="block font-display text-base font-semibold">+ {extra.name}</span>
-                      <span className={cx('text-xs', on ? 'text-cream/85' : 'text-cocoa/60')}>{formatNaira(extra.price)}</span>
+                    <span className="flex min-w-0 flex-1 items-center gap-3">
+                      {photo && <img src={photo} alt="" className="size-14 shrink-0 rounded-xl object-cover" />}
+                      <span className="min-w-0">
+                        <span className="block truncate font-display text-base font-semibold">+ {extra.name}</span>
+                        <span className={cx('block truncate text-xs', on ? 'text-cream/85' : 'text-cocoa/60')}>{formatNaira(extra.price)}</span>
+                      </span>
                     </span>
                     <span
                       className={cx(
-                        'grid size-6 place-items-center rounded-full border',
+                        'grid size-6 shrink-0 place-items-center rounded-full border',
                         on ? 'border-cream/70 bg-cream text-brand' : 'border-cocoa/20',
                       )}
                     >

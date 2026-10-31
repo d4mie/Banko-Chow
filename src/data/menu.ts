@@ -101,6 +101,7 @@ export const menu: MenuItem[] = [
       'Freshly made zobo, served chilled and made with love and zero added sugar. Because you shouldn’t have to choose between taste and health.',
     ingredients: ['Hibiscus', 'Ginger', 'Pineapple', 'Cloves'],
     price: 1000,
+    image: images.zobo,
     badge: 'Fresh daily',
   },
   {
@@ -111,6 +112,7 @@ export const menu: MenuItem[] = [
     description: 'A juicy sausage added to your Street Burger.',
     ingredients: ['Sausage'],
     price: 700,
+    image: images.sausage,
   },
   {
     id: 'cheese',
@@ -120,6 +122,7 @@ export const menu: MenuItem[] = [
     description: 'A slice of cheese melted over your filling.',
     ingredients: ['Cheese'],
     price: 700,
+    image: images.cheese,
   },
 ]
 
