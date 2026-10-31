@@ -74,7 +74,7 @@ function ItemSheetContent({ item, onClose, onAdded }: ItemSheetProps & { item: M
         {item.allowExtras && (
           <fieldset className="mt-6">
             <legend className="font-display text-xs font-semibold uppercase tracking-[0.2em] text-cocoa/60">Make it do more</legend>
-            <div className="mt-3 grid grid-cols-2 gap-2">
+            <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2">
               {extras.map((extra) => {
                 const on = picked.includes(extra.id)
                 const photo = menuById[extra.id]?.image
@@ -89,16 +89,16 @@ function ItemSheetContent({ item, onClose, onAdded }: ItemSheetProps & { item: M
                       on ? 'border-brand bg-brand text-cream shadow-float' : 'border-cocoa/10 bg-white/60 text-cocoa hover:bg-white',
                     )}
                   >
-                    <span className="flex min-w-0 items-center gap-3">
+                    <span className="flex min-w-0 flex-1 items-center gap-3">
                       {photo && <img src={photo} alt="" className="size-14 shrink-0 rounded-xl object-cover" />}
-                      <span>
-                        <span className="block font-display text-base font-semibold">+ {extra.name}</span>
-                        <span className={cx('text-xs', on ? 'text-cream/85' : 'text-cocoa/60')}>{formatNaira(extra.price)}</span>
+                      <span className="min-w-0">
+                        <span className="block truncate font-display text-base font-semibold">+ {extra.name}</span>
+                        <span className={cx('block truncate text-xs', on ? 'text-cream/85' : 'text-cocoa/60')}>{formatNaira(extra.price)}</span>
                       </span>
                     </span>
                     <span
                       className={cx(
-                        'grid size-6 place-items-center rounded-full border',
+                        'grid size-6 shrink-0 place-items-center rounded-full border',
                         on ? 'border-cream/70 bg-cream text-brand' : 'border-cocoa/20',
                       )}
                     >
