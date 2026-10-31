@@ -1,6 +1,6 @@
 import { Check, ShoppingBag } from 'lucide-react'
 import { useState } from 'react'
-import { extras, type MenuItem } from '../../data/menu'
+import { extras, menuById, type MenuItem } from '../../data/menu'
 import { cx, formatNaira } from '../../lib/format'
 import { useCart } from '../../store/cart'
 import { Badge, QuantityStepper } from '../ui/Primitives'
@@ -77,6 +77,7 @@ function ItemSheetContent({ item, onClose, onAdded }: ItemSheetProps & { item: M
             <div className="mt-3 grid grid-cols-2 gap-2">
               {extras.map((extra) => {
                 const on = picked.includes(extra.id)
+                const photo = menuById[extra.id]?.image
                 return (
                   <button
                     key={extra.id}
@@ -84,13 +85,16 @@ function ItemSheetContent({ item, onClose, onAdded }: ItemSheetProps & { item: M
                     onClick={() => toggle(extra.id)}
                     aria-pressed={on}
                     className={cx(
-                      'press flex items-center justify-between rounded-2xl border px-4 py-3 text-left transition-colors',
+                      'press flex items-center justify-between gap-3 rounded-2xl border py-2 pl-2 pr-3 text-left transition-colors',
                       on ? 'border-brand bg-brand text-cream shadow-float' : 'border-cocoa/10 bg-white/60 text-cocoa hover:bg-white',
                     )}
                   >
-                    <span>
-                      <span className="block font-display text-base font-semibold">+ {extra.name}</span>
-                      <span className={cx('text-xs', on ? 'text-cream/85' : 'text-cocoa/60')}>{formatNaira(extra.price)}</span>
+                    <span className="flex min-w-0 items-center gap-3">
+                      {photo && <img src={photo} alt="" className="size-14 shrink-0 rounded-xl object-cover" />}
+                      <span>
+                        <span className="block font-display text-base font-semibold">+ {extra.name}</span>
+                        <span className={cx('text-xs', on ? 'text-cream/85' : 'text-cocoa/60')}>{formatNaira(extra.price)}</span>
+                      </span>
                     </span>
                     <span
                       className={cx(

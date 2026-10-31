@@ -1,5 +1,6 @@
 import adTraffic from './ad-traffic.webp'
 import burgerSide from './burger-side.webp'
+import cheese from './cheese.webp'
 import comboCoke from './combo-coke.webp'
 import comboSprite from './combo-sprite.webp'
 import flatlay from './flatlay.webp'
@@ -10,6 +11,7 @@ import island from './island.webp'
 import linkbridge from './linkbridge.webp'
 import mainland from './mainland.webp'
 import sauceDrizzle from './sauce-drizzle.webp'
+import sausage from './sausage.webp'
 import stacked from './stacked.webp'
 import suyaOpen from './suya-open.webp'
 import toastedCloseup from './toasted-closeup.webp'
@@ -17,10 +19,14 @@ import toastedPaper from './toasted-paper.webp'
 import toastedTop from './toasted-top.webp'
 import wings from './wings.webp'
 import wingsSauce from './wings-sauce.webp'
+import zobo from './zobo.webp'
 
+// Zobo is the client's bottle photo. Sausage and cheese are Unsplash photos
+// (Unsplash License): photo-1624772398066 and photo-1627935722051.
 export const images = {
   adTraffic,
   burgerSide,
+  cheese,
   comboCoke,
   comboSprite,
   flatlay,
@@ -31,6 +37,7 @@ export const images = {
   linkbridge,
   mainland,
   sauceDrizzle,
+  sausage,
   stacked,
   suyaOpen,
   toastedCloseup,
@@ -38,6 +45,7 @@ export const images = {
   toastedTop,
   wings,
   wingsSauce,
+  zobo,
 } as const
 
 export type ImageKey = keyof typeof images

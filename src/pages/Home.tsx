@@ -131,14 +131,10 @@ export function Home() {
             ))}
           </div>
 
-          <div className="mt-5 grid gap-4 sm:grid-cols-[1fr_auto]">
-            <MenuItemCard item={menuById.zobo} onSelect={setSelected} compact />
-            <Glass className="flex items-center gap-4 rounded-3xl px-5 py-4">
-              <p className="text-sm text-cream/85">
-                Extras: <span className="font-semibold text-cream">Sausage</span> or{' '}
-                <span className="font-semibold text-cream">Cheese</span> for {formatNaira(menuById.cheese.price)}
-              </p>
-            </Glass>
+          <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {[menuById.zobo, menuById.sausage, menuById.cheese].map((item) => (
+              <MenuItemCard key={item.id} item={item} onSelect={setSelected} />
+            ))}
           </div>
         </Container>
       </section>
